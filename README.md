@@ -18,6 +18,23 @@ You don’t need to be an expert at artificial intelligence to create an awesome
 ```sh
 docker-compose up -d
 ```
+If using Amazon Linux : 
+- By default docker is install if not : 
+```
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+````
+
+- You need to install latest version of docker-compose : 
+```
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+```
+
+Fix permissions after download:
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 ### Using Helm
 
